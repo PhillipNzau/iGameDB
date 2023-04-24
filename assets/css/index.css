@@ -669,10 +669,6 @@ video {
   margin-top: 0.5rem;
 }
 
-.mb-1 {
-  margin-bottom: 0.25rem;
-}
-
 .box-border {
   box-sizing: border-box;
 }
@@ -2397,7 +2393,7 @@ html {
 }
 
 .mainHeight {
-  height: calc(100vh - 450px);
+  height: calc(100vh - 490px);
 }
 
 .swiper {
