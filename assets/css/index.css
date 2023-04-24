@@ -1701,11 +1701,6 @@ video {
   background-color: rgb(255 0 0 / var(--tw-bg-opacity));
 }
 
-.bg-red-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(252 165 165 / var(--tw-bg-opacity));
-}
-
 .decoration-slice {
   -webkit-box-decoration-break: slice;
           box-decoration-break: slice;
@@ -1870,11 +1865,6 @@ video {
 
 .align-super {
   vertical-align: super;
-}
-
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
 }
 
 .font-bold {
@@ -2273,6 +2263,46 @@ video {
 .content-\[\'this-is-also-valid\]-weirdly-enough\'\] {
   --tw-content: 'this-is-also-valid]-weirdly-enough';
   content: var(--tw-content);
+}
+
+@font-face {
+  font-family: "zonaBold";
+
+  font-style: normal;
+
+  src: url(assets/fonts/zonaPro-Bold.woff) format("woff");
+}
+
+@font-face {
+  font-family: "zonaExtraBold";
+
+  font-style: normal;
+
+  src: url(assets/fonts/zonaPro-ExtraBold.woff) format("woff");
+}
+
+@font-face {
+  font-family: "zonaLight";
+
+  font-style: normal;
+
+  src: url(assets/fonts/zonaPro-Light.woff) format("woff");
+}
+
+@font-face {
+  font-family: "zonaRegular";
+
+  font-style: normal;
+
+  src: url(assets/fonts/zonaPro-Regular.woff) format("woff");
+}
+
+html {
+  --tw-bg-opacity: 1;
+  background-color: hsl(0 0% 5% / var(--tw-bg-opacity));
+  font-family: zonaExtraBold, serif;
+  --tw-text-opacity: 1;
+  color: hsl(240 5% 92% / var(--tw-text-opacity));
 }
 
 @media (min-width: 640px) {
