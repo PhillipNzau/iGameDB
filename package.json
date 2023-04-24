@@ -1,0 +1,19 @@
+{
+  "name": "igamedb",
+  "version": "1.0.0",
+  "description": "A webapp dedicated to the gaming enthusiasts! It offers a comprehensive database of gaming reviews and ratings from a variety of sources. Whether you're a hardcore gamer or just starting out, our platform is the perfect place to find the latest and greatest games on the market. ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Gaming",
+    "Game",
+    "GameDb"
+  ],
+  "author": "Phillip Nzau",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.3.1"
+  }
+}
