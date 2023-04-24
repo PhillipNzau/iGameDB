@@ -8,6 +8,190 @@
     <script defer src="assets/js/index.js"></script>
   </head>
   <body>
-    <h1>well</h1>
+    <header class="flex justify-between items-center px-4 py-6">
+      <img src="" alt="iGameDB Logo" />
+      <div class="flex items-center">
+        <input type="search" name="search" id="searchGame" />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          style="fill: rgba(234, 234, 236, 1)"
+        >
+          <path
+            d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"
+          ></path>
+          <path
+            d="M11.412 8.586c.379.38.588.882.588 1.414h2a3.977 3.977 0 0 0-1.174-2.828c-1.514-1.512-4.139-1.512-5.652 0l1.412 1.416c.76-.758 2.07-.756 2.826-.002z"
+          ></path>
+        </svg>
+      </div>
+    </header>
+
+    <main class="px-4">
+      <div id="topGame" class="mb-4">
+        <h2>Hottest Right Now</h2>
+        <div id="gameSlider">
+          <img src="" alt="gameCover" />
+          <p>Title</p>
+          <p>Category</p>
+        </div>
+      </div>
+
+      <div id="popularGames" class="">
+        <p class="font-bold mb-4">Popular Games Right NOw</p>
+
+        <div
+          id="gameList"
+          class="grid grid-cols-2 gap-4 mainHeight overflow-hidden overflow-y-scroll pb-4"
+        >
+          <div class="relative rounded-md w-full h-52 overflow-auto">
+            <img
+              src="./assets/imgs/game1.jpg"
+              alt="gameCover"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="absolute bottom-0 bg-primaryBlack bg-opacity-30 w-full px-4 py-2"
+            >
+              <p class="font-bold text-xl">Title</p>
+              <p class="">Categorys</p>
+            </div>
+          </div>
+          <div class="relative rounded-md w-full h-52 overflow-auto">
+            <img
+              src="./assets/imgs/game1.jpg"
+              alt="gameCover"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="absolute bottom-0 bg-primaryBlack bg-opacity-30 w-full px-4 py-2"
+            >
+              <p class="font-bold text-xl">Title</p>
+              <p>Categorys</p>
+            </div>
+          </div>
+          <div class="relative rounded-md w-full h-52 overflow-auto">
+            <img
+              src="./assets/imgs/game1.jpg"
+              alt="gameCover"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="absolute bottom-0 bg-primaryBlack bg-opacity-30 w-full px-4 py-2"
+            >
+              <p class="font-bold text-xl">Title</p>
+              <p>Categorys</p>
+            </div>
+          </div>
+          <div class="relative rounded-md w-full h-52 overflow-auto">
+            <img
+              src="./assets/imgs/game1.jpg"
+              alt="gameCover"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="absolute bottom-0 bg-primaryBlack bg-opacity-30 w-full px-4 py-2"
+            >
+              <p class="font-bold text-xl">Title</p>
+              <p>Categorys</p>
+            </div>
+          </div>
+          <div class="relative rounded-md w-full h-52 overflow-auto">
+            <img
+              src="./assets/imgs/game1.jpg"
+              alt="gameCover"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="absolute bottom-0 bg-primaryBlack bg-opacity-30 w-full px-4 py-2"
+            >
+              <p class="font-bold text-xl">Title</p>
+              <p>Categorys</p>
+            </div>
+          </div>
+          <div class="relative rounded-md w-full h-52 overflow-auto">
+            <img
+              src="./assets/imgs/game1.jpg"
+              alt="gameCover"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="absolute bottom-0 bg-primaryBlack bg-opacity-30 w-full px-4 py-2"
+            >
+              <p class="font-bold text-xl">Title</p>
+              <p>Categorys</p>
+            </div>
+          </div>
+          <div class="relative rounded-md w-full h-52 overflow-auto">
+            <img
+              src="./assets/imgs/game1.jpg"
+              alt="gameCover"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="absolute bottom-0 bg-primaryBlack bg-opacity-30 w-full px-4 py-2"
+            >
+              <p class="font-bold text-xl">Title</p>
+              <p>Categorys</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer
+      class="bg-primaryRed rounded-t-3xl flex justify-between items-center px-10 py-6 absolute bottom-0 w-full"
+    >
+      <div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
+          />
+        </svg>
+      </div>
+      <div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+          />
+        </svg>
+      </div>
+      <div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 010 3.75H5.625a1.875 1.875 0 010-3.75z"
+          />
+        </svg>
+      </div>
+    </footer>
   </body>
 </html>

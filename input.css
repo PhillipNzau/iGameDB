@@ -26,5 +26,8 @@
 }
 
 html {
-  @apply t text-primaryWhite bg-primaryBlack;
+  @apply text-primaryWhite bg-primaryBlack;
+}
+.mainHeight {
+  height: calc(100vh - 296px);
 }
