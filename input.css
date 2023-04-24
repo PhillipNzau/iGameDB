@@ -29,7 +29,7 @@ html {
   @apply text-primaryWhite bg-primaryBlack;
 }
 .mainHeight {
-  height: calc(100vh - 450px);
+  height: calc(100vh - 490px);
 }
 
 .swiper {
