@@ -5,6 +5,10 @@
     <title>iGameDB | Phillip</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/css/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
     <script defer src="assets/js/index.js"></script>
   </head>
   <body>
@@ -30,13 +34,55 @@
     </header>
 
     <main class="px-4">
-      <div id="topGame" class="mb-4">
-        <h2>Hottest Right Now</h2>
-        <div id="gameSlider">
-          <img src="" alt="gameCover" />
-          <p>Title</p>
-          <p>Category</p>
+      <div id="topGame" class="swiper mb-4">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="relative rounded-md w-full h-52 overflow-auto">
+              <img
+                src="./assets/imgs/game1.jpg"
+                alt="gameCover"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute bottom-0 bg-primaryBlack bg-opacity-30 w-full px-4 py-2"
+              >
+                <p class="font-bold text-xl">Title</p>
+                <p class="">Categorys</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="relative rounded-md w-full h-52 overflow-auto">
+              <img
+                src="./assets/imgs/game1.jpg"
+                alt="gameCover"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute bottom-0 bg-primaryBlack bg-opacity-30 w-full px-4 py-2"
+              >
+                <p class="font-bold text-xl">Title</p>
+                <p class="">Categorys</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="relative rounded-md w-full h-52 overflow-auto">
+              <img
+                src="./assets/imgs/game1.jpg"
+                alt="gameCover"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute bottom-0 bg-primaryBlack bg-opacity-30 w-full px-4 py-2"
+              >
+                <p class="font-bold text-xl">Title</p>
+                <p class="">Categorys</p>
+              </div>
+            </div>
+          </div>
         </div>
+        <div class="swiper-pagination"></div>
       </div>
 
       <div id="popularGames" class="">
@@ -193,5 +239,6 @@
         </svg>
       </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   </body>
 </html>
