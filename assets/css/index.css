@@ -625,6 +625,10 @@ video {
   inset-inline-end: 0.25rem;
 }
 
+.top-0 {
+  top: 0px;
+}
+
 .isolate {
   isolation: isolate;
 }
@@ -768,12 +772,12 @@ video {
   display: none;
 }
 
-.h-52 {
-  height: 13rem;
-}
-
 .h-6 {
   height: 1.5rem;
+}
+
+.h-\[350px\] {
+  height: 350px;
 }
 
 .h-full {
@@ -1308,6 +1312,20 @@ video {
   gap: 1rem;
 }
 
+.gap-x-2 {
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+}
+
+.gap-x-4 {
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+}
+
+.gap-y-4 {
+  row-gap: 1rem;
+}
+
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(0.5rem * var(--tw-space-x-reverse));
@@ -1608,8 +1626,8 @@ video {
   border-radius: 0.25rem;
 }
 
-.rounded-md {
-  border-radius: 0.375rem;
+.rounded-3xl {
+  border-radius: 1.5rem;
 }
 
 .rounded-b {
@@ -1653,6 +1671,10 @@ video {
 
 .rounded-br {
   border-bottom-right-radius: 0.25rem;
+}
+
+.rounded-br-lg {
+  border-bottom-right-radius: 0.5rem;
 }
 
 .rounded-ee {
@@ -1746,6 +1768,11 @@ video {
   background-color: rgb(255 0 0 / var(--tw-bg-opacity));
 }
 
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
 .bg-primaryBlack {
   --tw-bg-opacity: 1;
   background-color: hsl(0 0% 5% / var(--tw-bg-opacity));
@@ -1754,6 +1781,10 @@ video {
 .bg-primaryRed {
   --tw-bg-opacity: 1;
   background-color: hsl(351 80% 49% / var(--tw-bg-opacity));
+}
+
+.bg-opacity-25 {
+  --tw-bg-opacity: 0.25;
 }
 
 .bg-opacity-30 {
@@ -1845,6 +1876,10 @@ video {
   background-origin: content-box;
 }
 
+.stroke-black {
+  stroke: #000;
+}
+
 .object-contain {
   -o-object-fit: contain;
      object-fit: contain;
@@ -1875,14 +1910,29 @@ video {
   padding-right: 2.5rem;
 }
 
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .py-6 {
@@ -1948,6 +1998,11 @@ video {
 
 .align-super {
   vertical-align: super;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 
 .text-xl {
@@ -2034,6 +2089,16 @@ video {
 .text-blue-500 {
   --tw-text-opacity: 1;
   color: rgb(59 130 246 / var(--tw-text-opacity));
+}
+
+.text-gray-500 {
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -2390,6 +2455,7 @@ html {
   background-color: hsl(0 0% 5% / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: hsl(240 5% 92% / var(--tw-text-opacity));
+  font-family: "Bebas Neue", sans-serif;
 }
 
 .mainHeight {
@@ -2399,6 +2465,64 @@ html {
 .swiper {
   width: 100%;
   height: 250px;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.noWidth {
+  width: 0;
+}
+
+.animateSearch {
+  width: 70px;
+  box-sizing: border-box;
+  background: transparent;
+  transition: width 0.4s ease-in-out;
+}
+
+#searchGame:focus {
+  width: 100%;
+}
+
+.gameGenre {
+  padding: 4px 14px;
+  border: 1px solid gray;
+  border-radius: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+.game-container {
+  position: relative;
+  border-radius: 6px;
+  width: 100%;
+  height: 208px;
+  overflow: auto;
+}
+
+.game-container-img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.game-container-details {
+  position: absolute;
+  bottom: 0;
+  background: hsl(224 15% 14%);
+  width: 100%;
+  padding: 16px 8px;
+}
+
+.game-container-details-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
 }
 
 @media (min-width: 640px) {
@@ -2435,6 +2559,10 @@ html {
       max-width: 1536px;
     }
   }
+}
+
+.hover\:cursor-pointer:hover {
+  cursor: pointer;
 }
 
 .hover\:font-bold:hover {

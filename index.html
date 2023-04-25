@@ -3,6 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <title>iGameDB | Phillip</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/css/index.css" />
     <link
@@ -12,181 +18,116 @@
     <script defer src="assets/js/index.js"></script>
   </head>
   <body>
-    <header class="flex justify-between items-center px-4 py-6">
-      <img src="" alt="iGameDB Logo" />
-      <div class="flex items-center">
-        <input type="search" name="search" id="searchGame" />
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          style="fill: rgba(234, 234, 236, 1)"
-        >
-          <path
-            d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"
-          ></path>
-          <path
-            d="M11.412 8.586c.379.38.588.882.588 1.414h2a3.977 3.977 0 0 0-1.174-2.828c-1.514-1.512-4.139-1.512-5.652 0l1.412 1.416c.76-.758 2.07-.756 2.826-.002z"
-          ></path>
-        </svg>
-      </div>
-    </header>
-
-    <main class="px-4">
-      <div id="topGame" class="swiper mb-4">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div class="relative rounded-md w-full h-52 overflow-auto">
-              <img
-                src="./assets/imgs/game1.jpg"
-                alt="gameCover"
-                class="w-full h-full object-cover"
-              />
-              <div
-                class="absolute bottom-0 bg-primaryBlack bg-opacity-30 w-full px-4 py-2"
-              >
-                <p class="font-bold text-xl">Title</p>
-                <p class="">Categorys</p>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="relative rounded-md w-full h-52 overflow-auto">
-              <img
-                src="./assets/imgs/game1.jpg"
-                alt="gameCover"
-                class="w-full h-full object-cover"
-              />
-              <div
-                class="absolute bottom-0 bg-primaryBlack bg-opacity-30 w-full px-4 py-2"
-              >
-                <p class="font-bold text-xl">Title</p>
-                <p class="">Categorys</p>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="relative rounded-md w-full h-52 overflow-auto">
-              <img
-                src="./assets/imgs/game1.jpg"
-                alt="gameCover"
-                class="w-full h-full object-cover"
-              />
-              <div
-                class="absolute bottom-0 bg-primaryBlack bg-opacity-30 w-full px-4 py-2"
-              >
-                <p class="font-bold text-xl">Title</p>
-                <p class="">Categorys</p>
-              </div>
-            </div>
-          </div>
+    <section id="mainView" class="">
+      <!-- The header with logo -->
+      <header class="flex justify-between items-center gap-x-4 px-4 py-6">
+        <img src="" alt="iGameDB" />
+        <div class="flex items-center justify-end gap-x-2">
+          <input
+            type="search"
+            name="search"
+            id="searchGame"
+            placeholder="Search"
+            class="rounded-3xl border px-2 py-1 animateSearch appearance-none text-white outline-none"
+          />
+          <svg
+            id="searchBtn"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            style="fill: rgba(234, 234, 236, 1); cursor: pointer"
+          >
+            <path
+              d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"
+            ></path>
+            <path
+              d="M11.412 8.586c.379.38.588.882.588 1.414h2a3.977 3.977 0 0 0-1.174-2.828c-1.514-1.512-4.139-1.512-5.652 0l1.412 1.416c.76-.758 2.07-.756 2.826-.002z"
+            ></path>
+          </svg>
         </div>
-        <div class="swiper-pagination"></div>
-      </div>
+      </header>
 
-      <div id="popularGames" class="">
-        <p class="font-bold mb-4">Popular Games Right NOw</p>
+      <main class="px-4">
+        <!-- The Slider -->
+        <div class="swiper mb-4">
+          <div class="swiper-wrapper">
+            <div id="topGame" class="swiper-slide">
+              <div class="game-container">
+                <img
+                  src="./assets/imgs/game1.jpg"
+                  alt="gameCover"
+                  class="w-full h-full object-cover"
+                />
+                <div
+                  class="absolute bottom-0 bg-primaryBlack bg-opacity-30 w-full px-4 py-2"
+                >
+                  <p class="font-bold text-xl">Title</p>
+                  <p class="">Categorys</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
 
+        <!-- The list view -->
+        <div id="popularGames" class="">
+          <p class="font-bold mb-4 text-xl">Popular Games Right NOw</p>
+
+          <div
+            id="gameList"
+            class="grid grid-cols-2 gap-4 mainHeight overflow-hidden overflow-y-scroll pb-4"
+          ></div>
+        </div>
+      </main>
+    </section>
+    <!-- The selected View -->
+    <section id="selectedView" class="hidden absolute top-0">
+      <div id="selectedImage" class="mb-4 h-[350px]">
         <div
-          id="gameList"
-          class="grid grid-cols-2 gap-4 mainHeight overflow-hidden overflow-y-scroll pb-4"
+          class="absolute py-4 px-2 hover:cursor-pointer bg-opacity-25 rounded-br-lg bg-black"
+          id="backBtn"
         >
-          <div class="relative rounded-md w-full h-52 overflow-auto">
-            <img
-              src="./assets/imgs/game1.jpg"
-              alt="gameCover"
-              class="w-full h-full object-cover"
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            class="w-6 h-6 stroke-black"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3"
             />
-            <div
-              class="absolute bottom-0 bg-primaryBlack bg-opacity-30 w-full px-4 py-2"
-            >
-              <p class="font-bold text-xl">Title</p>
-              <p class="">Categorys</p>
-            </div>
-          </div>
-          <div class="relative rounded-md w-full h-52 overflow-auto">
-            <img
-              src="./assets/imgs/game1.jpg"
-              alt="gameCover"
-              class="w-full h-full object-cover"
-            />
-            <div
-              class="absolute bottom-0 bg-primaryBlack bg-opacity-30 w-full px-4 py-2"
-            >
-              <p class="font-bold text-xl">Title</p>
-              <p>Categorys</p>
-            </div>
-          </div>
-          <div class="relative rounded-md w-full h-52 overflow-auto">
-            <img
-              src="./assets/imgs/game1.jpg"
-              alt="gameCover"
-              class="w-full h-full object-cover"
-            />
-            <div
-              class="absolute bottom-0 bg-primaryBlack bg-opacity-30 w-full px-4 py-2"
-            >
-              <p class="font-bold text-xl">Title</p>
-              <p>Categorys</p>
-            </div>
-          </div>
-          <div class="relative rounded-md w-full h-52 overflow-auto">
-            <img
-              src="./assets/imgs/game1.jpg"
-              alt="gameCover"
-              class="w-full h-full object-cover"
-            />
-            <div
-              class="absolute bottom-0 bg-primaryBlack bg-opacity-30 w-full px-4 py-2"
-            >
-              <p class="font-bold text-xl">Title</p>
-              <p>Categorys</p>
-            </div>
-          </div>
-          <div class="relative rounded-md w-full h-52 overflow-auto">
-            <img
-              src="./assets/imgs/game1.jpg"
-              alt="gameCover"
-              class="w-full h-full object-cover"
-            />
-            <div
-              class="absolute bottom-0 bg-primaryBlack bg-opacity-30 w-full px-4 py-2"
-            >
-              <p class="font-bold text-xl">Title</p>
-              <p>Categorys</p>
-            </div>
-          </div>
-          <div class="relative rounded-md w-full h-52 overflow-auto">
-            <img
-              src="./assets/imgs/game1.jpg"
-              alt="gameCover"
-              class="w-full h-full object-cover"
-            />
-            <div
-              class="absolute bottom-0 bg-primaryBlack bg-opacity-30 w-full px-4 py-2"
-            >
-              <p class="font-bold text-xl">Title</p>
-              <p>Categorys</p>
-            </div>
-          </div>
-          <div class="relative rounded-md w-full h-52 overflow-auto">
-            <img
-              src="./assets/imgs/game1.jpg"
-              alt="gameCover"
-              class="w-full h-full object-cover"
-            />
-            <div
-              class="absolute bottom-0 bg-primaryBlack bg-opacity-30 w-full px-4 py-2"
-            >
-              <p class="font-bold text-xl">Title</p>
-              <p>Categorys</p>
-            </div>
-          </div>
+          </svg>
+        </div>
+        <img
+          id="selectedGameImage"
+          src="./assets/imgs/game1.jpg"
+          alt="game"
+          class="w-full h-full object-cover"
+        />
+      </div>
+      <div class="px-4">
+        <p class="font-bold text-3xl mb-4">SUMMARY</p>
+        <p class="text-gray-500 mb-4" id="selectedGameSummary">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
+          obcaecati fuga autem officia nobis quidem ad architecto incidunt
+          laudantium nisi.
+        </p>
+        <p class="font-bold text-3xl mb-4">GENRES</p>
+        <div
+          id="selectedGameGenre"
+          class="flex items-center justify-around gap-y-4 flex-wrap"
+        >
+          <p class="gameGenre">Adventure</p>
         </div>
       </div>
-    </main>
+    </section>
 
+    <!-- Footer -->
     <footer
       class="bg-primaryRed rounded-t-3xl flex justify-between items-center px-10 py-6 absolute bottom-0 w-full"
     >
@@ -239,6 +180,10 @@
         </svg>
       </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"
+    ></script>
+    <script defer src="./assets/js/swiper.js"></script>
   </body>
 </html>

@@ -27,6 +27,7 @@
 
 html {
   @apply text-primaryWhite bg-primaryBlack;
+  font-family: "Bebas Neue", sans-serif;
 }
 .mainHeight {
   height: calc(100vh - 490px);
@@ -35,4 +36,55 @@ html {
 .swiper {
   width: 100%;
   height: 250px;
+}
+.fullWidth {
+  width: 100%;
+}
+.noWidth {
+  width: 0;
+}
+.animateSearch {
+  width: 70px;
+  box-sizing: border-box;
+  background: transparent;
+
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+#searchGame:focus {
+  width: 100%;
+}
+.gameGenre {
+  padding: 4px 14px;
+  border: 1px solid gray;
+  border-radius: 10px;
+}
+.hidden {
+  display: none;
+}
+.game-container {
+  position: relative;
+  border-radius: 6px;
+  width: 100%;
+  height: 208px;
+  overflow: auto;
+}
+
+.game-container-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.game-container-details {
+  position: absolute;
+  bottom: 0;
+  background: hsl(224 15% 14%);
+  width: 100%;
+  padding: 16px 8px;
+}
+.game-container-details-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
 }
