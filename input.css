@@ -27,6 +27,7 @@
 
 html {
   @apply text-primaryWhite bg-primaryBlack;
+  font-family: "Bebas Neue", sans-serif;
 }
 .mainHeight {
   height: calc(100vh - 490px);
@@ -52,4 +53,19 @@ html {
 }
 #searchGame:focus {
   width: 100%;
+}
+.gameGenre {
+  padding: 4px 14px;
+  border: 1px solid gray;
+  border-radius: 10px;
+}
+.hidden {
+  display: none;
+}
+.game-container {
+  position: relative;
+  border-radius: 6px;
+  width: 100%;
+  height: 208px;
+  overflow: auto;
 }
