@@ -13,15 +13,22 @@
   </head>
   <body>
     <header class="flex justify-between items-center px-4 py-6">
-      <img src="" alt="iGameDB Logo" />
-      <div class="flex items-center">
-        <input type="search" name="search" id="searchGame" />
+      <img src="" alt="iGameDB" />
+      <div class="flex items-center justify-end gap-x-2">
+        <input
+          type="search"
+          name="search"
+          id="searchGame"
+          placeholder="Search"
+          class="rounded-3xl border px-2 py-1 animateSearch appearance-none text-white outline-none"
+        />
         <svg
+          id="searchBtn"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
           viewBox="0 0 24 24"
-          style="fill: rgba(234, 234, 236, 1)"
+          style="fill: rgba(234, 234, 236, 1); cursor: pointer"
         >
           <path
             d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"
@@ -239,6 +246,10 @@
         </svg>
       </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"
+    ></script>
+    <script defer src="./assets/js/swiper.js"></script>
   </body>
 </html>
