@@ -69,3 +69,22 @@ html {
   height: 208px;
   overflow: auto;
 }
+
+.game-container-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.game-container-details {
+  position: absolute;
+  bottom: 0;
+  background: hsl(224 15% 14%);
+  width: 100%;
+  padding: 16px 8px;
+}
+.game-container-details-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+}
