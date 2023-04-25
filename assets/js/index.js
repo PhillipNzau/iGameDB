@@ -65,6 +65,8 @@ const getAllGames = async (url) => {
 /// 2. Handle page view change
 const handleClick = (e)=> {
   gameId = e.target.parentElement.id; 
+  clearInput();
+
   
   if(isGameViewed === false) {
     const singleGameUrl = `https://api.rawg.io/api/games/${gameId}?key=${rawgAPI}`;
@@ -214,6 +216,7 @@ const showFavoriteGames = () => {
 
   }
 
+  clearInput();
   toggleActiveClass('fav');
   showGameList(favs)
 
@@ -228,10 +231,17 @@ const showAllGames =() => {
   isGameViewed = false;
   mainView.classList.remove('hidden');
   selectedView.classList.add('hidden');
+  clearInput();
 
 
   toggleActiveClass('home');  
   getAllGames(apiUrl)
+}
+
+/// 12. Clear input field 
+const clearInput = () => {
+  searchGameInput.value = '';
+  search_term = '';
 }
 
 backButton.addEventListener('click',handleClick);
