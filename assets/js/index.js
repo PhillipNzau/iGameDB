@@ -9,6 +9,9 @@ let allGames;
 
 const mainView = document.getElementById('mainView');
 const selectedView = document.getElementById('selectedView');
+
+const swiperWrapper = document.getElementById('topGame');
+
 const listGames = document.getElementById('gameList');
 const gameContainer = document.querySelector('.game-container');
 
@@ -90,16 +93,21 @@ const showGameList = (games) => {
   }
 
 }
+/// 5. show slider games
+const showSliderGames = (games) =>{
+  topGame = games.filter(game => game.rating >= 4.5);
+  console.log('the top games',topGame);
+
+}
 
 
 // 2. Get all games
 const getAllGames = async (url) => {
   const cachedData = JSON.parse(localStorage.getItem('games') || '[]');
-  console.log('before',cachedData);
   if (cachedData.length > 1) {
-    console.log('Using cached data:', cachedData);
     allGames = cachedData
     showGameList(allGames);
+    showSliderGames(allGames)
     return;
   }
   try {
@@ -108,7 +116,6 @@ const getAllGames = async (url) => {
     allGames = data.results;
     localStorage.setItem('games', JSON.stringify(allGames))
     showGameList(allGames);
-    console.log(allGames);
     return showGameList(allGames);
   } catch (error) {
     console.error(error);
