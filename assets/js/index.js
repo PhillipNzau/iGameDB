@@ -43,6 +43,9 @@ const handleClick = (e)=> {
     selectedView.classList.remove('hidden');
     isGameViewed = !isGameViewed;
   } else {
+      selectedGameImage.src = './assets/imgs/game1.jpg'
+      selectedGameSummary.innerHTML = 'Loading';
+      selectedGameGenre.innerText = '';
       mainView.classList.remove('hidden');
       selectedView.classList.add('hidden');
       isGameViewed = !isGameViewed;
