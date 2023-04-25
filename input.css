@@ -80,6 +80,7 @@ html {
   position: absolute;
   bottom: 0;
   background: hsl(224 15% 14%);
+  opacity: 85%;
   width: 100%;
   padding: 16px 8px;
 }

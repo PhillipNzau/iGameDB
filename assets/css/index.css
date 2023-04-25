@@ -1773,11 +1773,6 @@ video {
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
-.bg-primaryBlack {
-  --tw-bg-opacity: 1;
-  background-color: hsl(0 0% 5% / var(--tw-bg-opacity));
-}
-
 .bg-primaryRed {
   --tw-bg-opacity: 1;
   background-color: hsl(351 80% 49% / var(--tw-bg-opacity));
@@ -1785,10 +1780,6 @@ video {
 
 .bg-opacity-25 {
   --tw-bg-opacity: 0.25;
-}
-
-.bg-opacity-30 {
-  --tw-bg-opacity: 0.3;
 }
 
 .decoration-slice {
@@ -1923,11 +1914,6 @@ video {
 .py-1 {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
-}
-
-.py-2 {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
 }
 
 .py-4 {
@@ -2515,6 +2501,7 @@ html {
   position: absolute;
   bottom: 0;
   background: hsl(224 15% 14%);
+  opacity: 85%;
   width: 100%;
   padding: 16px 8px;
 }

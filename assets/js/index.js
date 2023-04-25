@@ -4,8 +4,11 @@
 
 const rawgAPI = '462e2afdaf9f4f94ac3f237773ee1818';
 const apiUrl = `https://api.rawg.io/api/games?key=${rawgAPI}`;
+let gameId;
+
 
 let allGames;
+let selectedGame;
 
 const mainView = document.getElementById('mainView');
 const selectedView = document.getElementById('selectedView');
@@ -20,20 +23,22 @@ const searchButton = document.getElementById('searchBtn');
 const searchGameInput = document.getElementById('searchGame');
 
 //Selected View
-const selectedGameImage = document.getElementById('#selectedGameImage');
-const selectedGameSummary = document.getElementById('#selectedGameSummary');
-const selectedGameGenre = document.getElementById('#selectedGameGenre');
-
+const selectedGameImage = document.getElementById('selectedGameImage');
+const selectedGameSummary = document.getElementById('selectedGameSummary');
+const selectedGameGenre = document.getElementById('selectedGameGenre');
 
 
 let isGameViewed = false;
 
 
-
 // 1. Handle page view change
-const handleClick = ()=> {
-
+const handleClick = (e)=> {
+  gameId = e.target.parentElement.id; 
   if(isGameViewed === false) {
+    console.log(gameId);
+    const singleGameUrl = `https://api.rawg.io/api/games/${gameId}?key=${rawgAPI}`;
+
+    getSelectedGame(singleGameUrl)
     mainView.classList.add('hidden');
     selectedView.classList.remove('hidden');
     isGameViewed = !isGameViewed;
@@ -43,7 +48,6 @@ const handleClick = ()=> {
       isGameViewed = !isGameViewed;
   }
 }
-
 
 /// 3. Show game details 
 const showGameDetails = (game) => {
@@ -56,28 +60,45 @@ const showGameDetails = (game) => {
     genreName.classList.add('gameGenre')
     genreName.innerText = genre.name;
   }
-
 }
 
 /// 4. Show Game List
 const showGameList = (games) => {
   for(let game of games) {
-    const gameCont = document.createElement('div')
-    gameCont.classList.add('game-container')
+    generateContainer(game, listGames)
+  }
 
+}
+/// 5. show slider games
+const showSliderGames = (games) =>{
+  topGames = games.filter(game => game.rating >= 4.5);
+  console.log('the top games',topGame);
+  for(let topGame of topGames) {
+    const gameSlider = document.createElement('div');
+    gameSlider.classList.add('swiper-slide');
+    generateContainer(topGame, gameSlider, swiperWrapper);
+  }
+
+}
+
+/// 6. A reusable function to create similar containers
+const generateContainer = (game, primaryContainer, secondaryContainer) => {
+  const gameCont = document.createElement('div')
+    gameCont.classList.add('game-container')
+  
     const gameImg = document.createElement('img');
     gameImg.src = game.background_image;
     gameImg.alt = game.name;
     gameImg.classList.add('game-container-img');
-
+  
     const gameDetails = document.createElement('div');
     gameDetails.classList.add('game-container-details');
-
-
+  
+  
     const gameDetailTile = document.createElement('p');
     gameDetailTile.innerText = game.name;
     gameDetailTile.classList.add('game-container-details-tile');
-
+  
     const gameDetailRating = document.createElement('p');
     gameDetailRating.innerText = game.rating;
 
@@ -87,20 +108,17 @@ const showGameList = (games) => {
     gameCont.appendChild(gameImg);
     gameCont.appendChild(gameDetails);
 
-    listGames.appendChild(gameCont);
+    gameCont.id = game.id
 
+    primaryContainer.appendChild(gameCont);
 
-  }
+    // Check if secondary container is passed or not
+    if(secondaryContainer) {
+      secondaryContainer.appendChild(primaryContainer);
+    }
 
+    gameCont.addEventListener('click', handleClick)
 }
-/// 5. show slider games
-const showSliderGames = (games) =>{
-  topGame = games.filter(game => game.rating >= 4.5);
-  console.log('the top games',topGame);
-
-}
-
-
 // 2. Get all games
 const getAllGames = async (url) => {
   const cachedData = JSON.parse(localStorage.getItem('games') || '[]');
@@ -124,7 +142,24 @@ const getAllGames = async (url) => {
 }
 
 
+//// 7. Fetch selected game
+const getSelectedGame = async (url) => {
+  try {
+    const response = await fetch(url)
+    const data = await response.json();
+    selectedGame = data;
+    showGameDetails(selectedGame)
+    return
+  } catch (error) {
+    console.error(error);
+    throw new ErrorEvent('Failed to fetch data');
+  }
+
+
+}
+
+
 getAllGames(apiUrl)
 
 backButton.addEventListener('click',handleClick);
-gameContainer.addEventListener('click',handleClick);
+// gameContainer.addEventListener('click',handleClick);
