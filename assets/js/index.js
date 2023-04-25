@@ -27,17 +27,47 @@ const selectedGameImage = document.getElementById('selectedGameImage');
 const selectedGameSummary = document.getElementById('selectedGameSummary');
 const selectedGameGenre = document.getElementById('selectedGameGenre');
 
+const homeButton = document.getElementById('homeBtn');
+const addToFavsButton = document.getElementById('favBtn');
+const listTitle = document.getElementById('listTitle');
+
 
 let isGameViewed = false;
+let search_term = "";
+let favs = [];
 
+addEventListener("DOMContentLoaded", (event) => {
+  toggleActiveClass('home')
+});
 
-// 1. Handle page view change
+/// 1. Get all games
+const getAllGames = async (url) => {
+  const cachedData = JSON.parse(localStorage.getItem('games') || '[]');
+  if (cachedData.length > 1) {
+    allGames = cachedData
+    showGameList(allGames);
+    showSliderGames(allGames)
+    return;
+  }
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    allGames = data.results;
+    localStorage.setItem('games', JSON.stringify(allGames))
+    showGameList(allGames);
+    return showGameList(allGames);
+  } catch (error) {
+    console.error(error);
+    throw new ErrorEvent('Failed to fetch data');
+  }
+}
+
+/// 2. Handle page view change
 const handleClick = (e)=> {
   gameId = e.target.parentElement.id; 
+  
   if(isGameViewed === false) {
-    console.log(gameId);
     const singleGameUrl = `https://api.rawg.io/api/games/${gameId}?key=${rawgAPI}`;
-
     getSelectedGame(singleGameUrl)
     mainView.classList.add('hidden');
     selectedView.classList.remove('hidden');
@@ -65,8 +95,6 @@ const showGameDetails = (game) => {
     genreName.innerText = genre.name;
 
     selectedGameGenre.appendChild(genreName)
-
-
   }
 }
 
@@ -75,12 +103,11 @@ const showGameList = (games) => {
   for(let game of games) {
     generateContainer(game, listGames)
   }
-
 }
+
 /// 5. show slider games
 const showSliderGames = (games) =>{
   topGames = games.filter(game => game.rating >= 4.5);
-  console.log('the top games',topGame);
   for(let topGame of topGames) {
     const gameSlider = document.createElement('div');
     gameSlider.classList.add('swiper-slide');
@@ -127,27 +154,6 @@ const generateContainer = (game, primaryContainer, secondaryContainer) => {
 
     gameCont.addEventListener('click', handleClick)
 }
-// 2. Get all games
-const getAllGames = async (url) => {
-  const cachedData = JSON.parse(localStorage.getItem('games') || '[]');
-  if (cachedData.length > 1) {
-    allGames = cachedData
-    showGameList(allGames);
-    showSliderGames(allGames)
-    return;
-  }
-  try {
-    const response = await fetch(url);
-    const data = await response.json();
-    allGames = data.results;
-    localStorage.setItem('games', JSON.stringify(allGames))
-    showGameList(allGames);
-    return showGameList(allGames);
-  } catch (error) {
-    console.error(error);
-    throw new ErrorEvent('Failed to fetch data');
-  }
-}
 
 
 //// 7. Fetch selected game
@@ -161,12 +167,79 @@ const getSelectedGame = async (url) => {
     console.error(error);
     throw new ErrorEvent('Failed to fetch data');
   }
-
-
 }
 
+/// 8. Search for games
+const searchForGame = () => {
+  listGames.innerHTML = "";
+  const games = allGames.filter((item) => {
+      return (
+        item.name.toLowerCase().includes(search_term) ||
+        item.rating.toString().includes(search_term)
+      );
+    })
+    showGameList(games)
+};
 
-getAllGames(apiUrl)
+/// 9.Add to favourite
+const addToFavorite = () => {
+  alert("Added to favorites!"); 
+  // const added = favs.push(selectedGame)
+  
+  favs.push(selectedGame);
+  console.log(favs);
+}
+
+const toggleActiveClass = (page) => {
+  if(page === 'home') {
+    homeButton.classList.add('active');
+    addToFavsButton.classList.remove('active');
+  } 
+  else if(page === 'fav') {
+    homeButton.classList.remove('active');
+    addToFavsButton.classList.add('active');
+  }
+}
+/// 10. list fav games
+const showFavoriteGames = () => {
+  listGames.innerHTML = "";
+  mainView.classList.remove('hidden');
+  selectedView.classList.add('hidden');
+  isGameViewed = false;
+
+  if (favs.length === 0) {
+    listTitle.innerText = 'No Game Added'
+  } else {
+    listTitle.innerText = 'Your Favorite Games'
+
+  }
+
+  toggleActiveClass('fav');
+  showGameList(favs)
+
+}
+/// 11. show all games on btn click
+const showAllGames =() => {
+  listGames.innerHTML = "";
+  swiperWrapper.innerHTML = '';
+  listTitle.innerText = ''
+  listTitle.innerText = 'Popular Games Right NOw'
+  
+  isGameViewed = false;
+  mainView.classList.remove('hidden');
+  selectedView.classList.add('hidden');
+
+
+  toggleActiveClass('home');  
+  getAllGames(apiUrl)
+}
 
 backButton.addEventListener('click',handleClick);
-// gameContainer.addEventListener('click',handleClick);
+
+
+
+searchGameInput.addEventListener('input', (e) => {
+  search_term = e.target.value.toLowerCase();
+  searchForGame()
+});
+getAllGames(apiUrl)

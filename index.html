@@ -21,13 +21,14 @@
     <section id="mainView" class="">
       <!-- The header with logo -->
       <header class="flex justify-between items-center gap-x-4 px-4 py-6">
-        <img src="" alt="iGameDB" />
+        <p>iGameDB</p>
         <div class="flex items-center justify-end gap-x-2">
           <input
             type="search"
             name="search"
             id="searchGame"
             placeholder="Search"
+            autocomplete="off"
             class="rounded-3xl border px-2 py-1 animateSearch appearance-none text-white outline-none"
           />
           <svg
@@ -57,7 +58,9 @@
 
         <!-- The list view -->
         <div id="popularGames" class="">
-          <p class="font-bold mb-4 text-xl">Popular Games Right NOw</p>
+          <p id="listTitle" class="font-bold mb-4 text-xl">
+            Popular Games Right NOw
+          </p>
 
           <div
             id="gameList"
@@ -95,7 +98,17 @@
         />
       </div>
       <div class="px-4 h-[350px] overflow-y-scroll overflow-hidden">
-        <p class="font-bold text-3xl mb-4">SUMMARY</p>
+        <div class="flex justify-between items-center">
+          <p class="font-bold text-3xl mb-4">SUMMARY</p>
+
+          <p
+            class="font-bold text-5xl mb-4 hover:cursor-pointer"
+            id="addToFavs"
+            onclick="addToFavorite()"
+          >
+            +
+          </p>
+        </div>
         <p class="text-gray-500 mb-4 selected-genre-p" id="selectedGameSummary">
           Loading...
         </p>
@@ -109,9 +122,13 @@
 
     <!-- Footer -->
     <footer
-      class="bg-primaryRed rounded-t-3xl flex justify-between items-center px-10 py-6 absolute bottom-0 w-full"
+      class="bg-primaryRed rounded-t-3xl flex justify-between items-center absolute bottom-0 w-full p-4"
     >
-      <div>
+      <div
+        class="w-10 h-10 flex items-center justify-center"
+        id="homeBtn"
+        onclick="showAllGames()"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -127,7 +144,11 @@
           />
         </svg>
       </div>
-      <div>
+      <div
+        class="w-10 h-10 flex items-center justify-center"
+        id="favBtn"
+        onclick="showFavoriteGames()"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -143,7 +164,7 @@
           />
         </svg>
       </div>
-      <div>
+      <div class="w-10 h-10 flex items-center justify-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
