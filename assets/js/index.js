@@ -52,13 +52,18 @@ const handleClick = (e)=> {
 /// 3. Show game details 
 const showGameDetails = (game) => {
   selectedGameImage.src = game.background_image;
-  selectedGameSummary.innerText = game.description;
+  selectedGameSummary.innerHTML = game.description;
+  selectedGameSummary.classList.add('selected-genre-p')
 
   // Create the genre elements
   for (let genre of game.genres ) {
     const genreName = document.createElement('p');
     genreName.classList.add('gameGenre')
     genreName.innerText = genre.name;
+
+    selectedGameGenre.appendChild(genreName)
+
+
   }
 }
 
@@ -148,8 +153,7 @@ const getSelectedGame = async (url) => {
     const response = await fetch(url)
     const data = await response.json();
     selectedGame = data;
-    showGameDetails(selectedGame)
-    return
+    return showGameDetails(selectedGame)
   } catch (error) {
     console.error(error);
     throw new ErrorEvent('Failed to fetch data');

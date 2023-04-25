@@ -89,3 +89,8 @@ html {
   font-size: 20px;
   line-height: 28px;
 }
+.selected-genre-p {
+  overflow: hidden;
+  overflow-y: scroll;
+  height: 190px;
+}

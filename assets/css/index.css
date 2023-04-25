@@ -2512,6 +2512,12 @@ html {
   line-height: 28px;
 }
 
+.selected-genre-p {
+  overflow: hidden;
+  overflow-y: scroll;
+  height: 190px;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
