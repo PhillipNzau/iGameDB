@@ -185,10 +185,15 @@ const searchForGame = () => {
 
 /// 9.Add to favourite
 const addToFavorite = () => {
-  alert("Added to favorites!"); 
   // const added = favs.push(selectedGame)
-  
-  favs.push(selectedGame);
+  if(favs.includes(selectedGame)) {
+    alert('Game already in your favorites.')
+  } else {
+    alert("Added to favorites!"); 
+    favs.push(selectedGame);
+  }
+
+ 
   console.log(favs);
 }
 
