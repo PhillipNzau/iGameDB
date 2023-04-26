@@ -192,9 +192,9 @@ const addToFavorite = () => {
     alert("Added to favorites!"); 
     favs.push(selectedGame);
   }
-
- 
-  console.log(favs);
+  
+  localStorage.setItem('favgames', JSON.stringify(favs));
+    
 }
 
 const toggleActiveClass = (page) => {
@@ -220,9 +220,12 @@ const showFavoriteGames = () => {
     listTitle.innerText = 'Your Favorite Games'
 
   }
+ 
+  // const cachedFavData = JSON.parse(localStorage.getItem('favgames') || '');
 
   clearInput();
   toggleActiveClass('fav');
+  
   showGameList(favs)
 
 }
