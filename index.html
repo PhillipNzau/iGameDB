@@ -205,6 +205,8 @@
           <p class="ml-6">Log Out</p>
         </div>
       </aside>
+
+      <!-- Main View -->
       <main id="mainView" class="px-4 col-span-3">
         <!-- The Slider -->
         <div class="swiper mb-4 lg:min-h-[400px]">
@@ -226,7 +228,13 @@
       </main>
 
       <!-- right side section -->
-      <aside></aside>
+      <aside class="hidden lg:flex flex-col items-end gap-y-6">
+        <p class="text-xl">Top Game Trailers</p>
+        <div
+          id="gameTrailers"
+          class="side-nav-height overflow-hidden overflow-y-scroll"
+        ></div>
+      </aside>
     </section>
 
     <!-- The selected View -->

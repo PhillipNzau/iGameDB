@@ -31,6 +31,8 @@ const homeButton = document.getElementById('homeBtn');
 const addToFavsButton = document.getElementById('favBtn');
 const listTitle = document.getElementById('listTitle');
 
+// Side Nav 
+const gameTrailers = document.getElementById('gameTrailers');
 
 let isGameViewed = false;
 let search_term = "";
@@ -114,6 +116,7 @@ const showSliderGames = (games) =>{
     const gameSlider = document.createElement('div');
     gameSlider.classList.add('swiper-slide');
     generateContainer(topGame, gameSlider, swiperWrapper);
+    generateSideNavContainer(topGame,gameTrailers )
   }
 
 }
@@ -250,6 +253,38 @@ const showAllGames =() => {
 const clearInput = () => {
   searchGameInput.value = '';
   search_term = '';
+}
+
+/// 13. Populate trailers side nav
+const generateSideNavContainer =(game, primaryContainer) => {
+  const frag = document.createDocumentFragment();
+  
+  const gameCont = document.createElement('div')
+  gameCont.classList.add('game-trailer-container')
+
+  const gameImg = document.createElement('img');
+  gameImg.src = game.background_image;
+  gameImg.alt = game.name;
+  gameImg.classList.add('game-trailer-img');
+
+  const gameDetails = document.createElement('div');
+
+
+  const gameDetailTitle = document.createElement('p');
+  gameDetailTitle.innerText = game.name;
+
+  const gameDetailRating = document.createElement('p');
+  gameDetailRating.innerText = game.rating;
+
+  
+
+  gameDetails.appendChild(gameDetailTitle);
+  gameDetails.appendChild(gameDetailRating);
+  gameCont.appendChild(gameImg);
+  gameCont.appendChild(gameDetails);
+  frag.appendChild(gameCont);
+
+  primaryContainer.appendChild(frag);
 }
 
 backButton.addEventListener('click',handleClick);

@@ -2565,6 +2565,31 @@ html {
   }
 }
 
+.game-trailer-container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.game-trailer-img {
+  width: 13rem;
+  border-radius: 6px;
+}
+
+.side-nav-height {
+  height: calc(100vh - 106px);
+}
+
+/* .side-nav-height > div {
+  display: flex;
+  gap: 1rem;
+}
+.side-nav-height img {
+  width: 13rem;
+  height: 13rem;
+  border-radius: 6px;
+} */
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
