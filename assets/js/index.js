@@ -29,6 +29,9 @@ const selectedGameGenre = document.getElementById('selectedGameGenre');
 
 const homeButton = document.getElementById('homeBtn');
 const addToFavsButton = document.getElementById('favBtn');
+const sideHomeButton = document.getElementById('sideHomeBtn');
+const sideAddToFavsButton = document.getElementById('sideFavBtn');
+
 const listTitle = document.getElementById('listTitle');
 
 // Side Nav 
@@ -202,12 +205,19 @@ const addToFavorite = () => {
 
 const toggleActiveClass = (page) => {
   if(page === 'home') {
+    console.log('active home');
     homeButton.classList.add('active');
+    sideHomeButton.classList.add('active');
     addToFavsButton.classList.remove('active');
+    sideAddToFavsButton.classList.remove('active');
   } 
   else if(page === 'fav') {
+    console.log('active fav');
+
     homeButton.classList.remove('active');
     addToFavsButton.classList.add('active');
+    sideHomeButton.classList.remove('active');
+    sideAddToFavsButton.classList.add('active');
   }
 }
 /// 10. list fav games

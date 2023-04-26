@@ -98,7 +98,7 @@ html {
   background: hsl(224 15% 14%);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   border-radius: 10px;
 }
 
@@ -133,13 +133,3 @@ html {
 .side-nav-height {
   height: calc(100vh - 106px);
 }
-
-/* .side-nav-height > div {
-  display: flex;
-  gap: 1rem;
-}
-.side-nav-height img {
-  width: 13rem;
-  height: 13rem;
-  border-radius: 6px;
-} */
