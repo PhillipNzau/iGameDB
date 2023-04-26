@@ -20,6 +20,7 @@
   <body>
     <!-- The header with logo -->
     <header
+      id="headerSection"
       class="flex justify-between items-center gap-x-4 px-4 py-6 lg:px-16"
     >
       <p>iGameDB</p>
@@ -238,8 +239,11 @@
     </section>
 
     <!-- The selected View -->
-    <section id="selectedView" class="hidden absolute top-0">
-      <div id="selectedImage" class="mb-4 h-[350px]">
+    <section
+      id="selectedView"
+      class="hidden lg:w-1/2 mx-auto h-[650px] lg:h-[825px] overflow-hidden overflow-y-scroll"
+    >
+      <div id="selectedImage" class="mb-4">
         <div
           class="absolute py-4 px-2 hover:cursor-pointer bg-opacity-25 rounded-br-lg bg-black"
           id="backBtn"
@@ -265,7 +269,7 @@
           class="w-full h-full object-cover"
         />
       </div>
-      <div class="px-4 h-[350px] overflow-y-scroll overflow-hidden">
+      <div class="px-4 h-[370px] lg:h-auto overflow-y-scroll overflow-hidden">
         <div class="flex justify-between items-center">
           <p class="font-bold text-3xl mb-4">SUMMARY</p>
 

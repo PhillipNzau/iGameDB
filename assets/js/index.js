@@ -88,6 +88,8 @@ const handleClick = (e)=> {
       selectedGameSummary.innerHTML = 'Loading';
       selectedGameGenre.innerText = '';
       mainSection.classList.remove('hidden');
+      mainSection.classList.add('myGrid');
+
 
       selectedView.classList.add('hidden');
       isGameViewed = !isGameViewed;
@@ -215,6 +217,7 @@ const toggleActiveClass = (page) => {
     sideHomeButton.classList.add('active');
     addToFavsButton.classList.remove('active');
     sideAddToFavsButton.classList.remove('active');
+    
   } 
   else if(page === 'fav') {
     console.log('active fav');
@@ -229,6 +232,9 @@ const toggleActiveClass = (page) => {
 const showFavoriteGames = () => {
   listGames.innerHTML = "";
   mainView.classList.remove('hidden');
+  mainSection.classList.remove('hidden');
+  mainSection.classList.add('myGrid');
+
   selectedView.classList.add('hidden');
   isGameViewed = false;
 
@@ -256,7 +262,11 @@ const showAllGames =() => {
   
   isGameViewed = false;
   mainView.classList.remove('hidden');
+  mainSection.classList.remove('hidden');
+  mainSection.classList.add('myGrid');
+
   selectedView.classList.add('hidden');
+
   clearInput();
 
 
