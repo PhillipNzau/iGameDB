@@ -637,6 +637,10 @@ video {
   isolation: auto;
 }
 
+.col-span-3 {
+  grid-column: span 3 / span 3;
+}
+
 .float-right {
   float: right;
 }
@@ -667,6 +671,10 @@ video {
 
 .mb-4 {
   margin-bottom: 1rem;
+}
+
+.ml-6 {
+  margin-left: 1.5rem;
 }
 
 .mt-2 {
@@ -772,6 +780,10 @@ video {
   display: none;
 }
 
+.h-10 {
+  height: 2.5rem;
+}
+
 .h-6 {
   height: 1.5rem;
 }
@@ -784,8 +796,12 @@ video {
   height: 100%;
 }
 
-.h-10 {
-  height: 2.5rem;
+.w-10 {
+  width: 2.5rem;
+}
+
+.w-52 {
+  width: 13rem;
 }
 
 .w-6 {
@@ -794,10 +810,6 @@ video {
 
 .w-full {
   width: 100%;
-}
-
-.w-10 {
-  width: 2.5rem;
 }
 
 .flex-shrink {
@@ -1332,6 +1344,10 @@ video {
 
 .gap-y-4 {
   row-gap: 1rem;
+}
+
+.gap-y-6 {
+  row-gap: 1.5rem;
 }
 
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
@@ -2534,9 +2550,49 @@ html {
   background: hsl(224 15% 14%);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   border-radius: 10px;
+  border-right: 2px solid red;
 }
+
+.active svg {
+  stroke: red;
+}
+
+@media (min-width: 1024px) {
+  #topGame .game-container {
+    height: 400px;
+  }
+
+  .mainHeight {
+    height: calc(100vh - 580px);
+  }
+}
+
+.game-trailer-container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.game-trailer-img {
+  width: 13rem;
+  border-radius: 6px;
+}
+
+.side-nav-height {
+  height: calc(100vh - 106px);
+}
+
+/* .side-nav-height > div {
+  display: flex;
+  gap: 1rem;
+}
+.side-nav-height img {
+  width: 13rem;
+  height: 13rem;
+  border-radius: 6px;
+} */
 
 @media (min-width: 640px) {
   .sm\:container {
@@ -2603,6 +2659,41 @@ html {
 @media (min-width: 640px) {
   .sm\:underline {
     text-decoration-line: underline;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:flex {
+    display: flex;
+  }
+
+  .lg\:grid {
+    display: grid;
+  }
+
+  .lg\:hidden {
+    display: none;
+  }
+
+  .lg\:min-h-\[400px\] {
+    min-height: 400px;
+  }
+
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .lg\:grid-cols-5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .lg\:overflow-hidden {
+    overflow: hidden;
+  }
+
+  .lg\:px-16 {
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
 }
 

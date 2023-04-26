@@ -98,6 +98,41 @@ html {
   background: hsl(224 15% 14%);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   border-radius: 10px;
+  border-right: 2px solid red;
 }
+.active svg {
+  stroke: red;
+}
+
+@media (min-width: 1024px) {
+  #topGame .game-container {
+    height: 400px;
+  }
+  .mainHeight {
+    height: calc(100vh - 580px);
+  }
+}
+.game-trailer-container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.game-trailer-img {
+  width: 13rem;
+  border-radius: 6px;
+}
+.side-nav-height {
+  height: calc(100vh - 106px);
+}
+
+/* .side-nav-height > div {
+  display: flex;
+  gap: 1rem;
+}
+.side-nav-height img {
+  width: 13rem;
+  height: 13rem;
+  border-radius: 6px;
+} */

@@ -51,3 +51,11 @@ Please make sure to update tests as appropriate.
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
+
+## Link
+
+Find a live preview of the app here [iGameDB](https://phillipnzau.github.io/iGameDB/)
+
+## Author
+
+The creator of the webapp is [Phillip Nzau Junior](https://github.com/PhillipNzau)
