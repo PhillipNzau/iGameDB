@@ -21,6 +21,8 @@ const gameContainer = document.querySelector('.game-container');
 const backButton = document.getElementById('backBtn');
 const searchButton = document.getElementById('searchBtn');
 const searchGameInput = document.getElementById('searchGame');
+const mainSection = document.getElementById('mainSection');
+
 
 //Selected View
 const selectedGameImage = document.getElementById('selectedGameImage');
@@ -76,14 +78,17 @@ const handleClick = (e)=> {
   if(isGameViewed === false) {
     const singleGameUrl = `https://api.rawg.io/api/games/${gameId}?key=${rawgAPI}`;
     getSelectedGame(singleGameUrl)
-    mainView.classList.add('hidden');
+    mainSection.classList.add('hidden');
+    mainSection.classList.remove('myGrid');
+
     selectedView.classList.remove('hidden');
     isGameViewed = !isGameViewed;
   } else {
       selectedGameImage.src = './assets/imgs/game1.jpg'
       selectedGameSummary.innerHTML = 'Loading';
       selectedGameGenre.innerText = '';
-      mainView.classList.remove('hidden');
+      mainSection.classList.remove('hidden');
+
       selectedView.classList.add('hidden');
       isGameViewed = !isGameViewed;
   }

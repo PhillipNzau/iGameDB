@@ -2575,6 +2575,10 @@ html {
   .mainHeight {
     height: calc(100vh - 580px);
   }
+
+  .myGrid {
+    display: grid;
+  }
 }
 
 .game-trailer-container {
@@ -2663,10 +2667,6 @@ html {
 @media (min-width: 1024px) {
   .lg\:flex {
     display: flex;
-  }
-
-  .lg\:grid {
-    display: grid;
   }
 
   .lg\:hidden {

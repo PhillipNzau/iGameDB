@@ -120,6 +120,9 @@ html {
   .mainHeight {
     height: calc(100vh - 580px);
   }
+  .myGrid {
+    display: grid;
+  }
 }
 .game-trailer-container {
   display: flex;
