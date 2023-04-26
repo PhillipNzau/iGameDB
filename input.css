@@ -30,7 +30,7 @@ html {
   font-family: "Bebas Neue", sans-serif;
 }
 .mainHeight {
-  height: calc(100vh - 490px);
+  height: calc(100vh - 500px);
 }
 
 .swiper {
@@ -118,14 +118,13 @@ html {
     height: 400px;
   }
   .mainHeight {
-    height: calc(100vh - 580px);
+    height: calc(100vh - 530px);
   }
   .myGrid {
     display: grid;
   }
 }
 .game-trailer-container {
-  display: flex;
   gap: 1rem;
   margin-bottom: 2rem;
 }
