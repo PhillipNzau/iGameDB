@@ -65,6 +65,8 @@ const getAllGames = async (url) => {
 /// 2. Handle page view change
 const handleClick = (e)=> {
   gameId = e.target.parentElement.id; 
+  clearInput();
+
   
   if(isGameViewed === false) {
     const singleGameUrl = `https://api.rawg.io/api/games/${gameId}?key=${rawgAPI}`;
@@ -183,11 +185,16 @@ const searchForGame = () => {
 
 /// 9.Add to favourite
 const addToFavorite = () => {
-  alert("Added to favorites!"); 
   // const added = favs.push(selectedGame)
+  if(favs.includes(selectedGame)) {
+    alert('Game already in your favorites.')
+  } else {
+    alert("Added to favorites!"); 
+    favs.push(selectedGame);
+  }
   
-  favs.push(selectedGame);
-  console.log(favs);
+  localStorage.setItem('favgames', JSON.stringify(favs));
+    
 }
 
 const toggleActiveClass = (page) => {
@@ -213,8 +220,12 @@ const showFavoriteGames = () => {
     listTitle.innerText = 'Your Favorite Games'
 
   }
+ 
+  // const cachedFavData = JSON.parse(localStorage.getItem('favgames') || '');
 
+  clearInput();
   toggleActiveClass('fav');
+  
   showGameList(favs)
 
 }
@@ -228,10 +239,17 @@ const showAllGames =() => {
   isGameViewed = false;
   mainView.classList.remove('hidden');
   selectedView.classList.add('hidden');
+  clearInput();
 
 
   toggleActiveClass('home');  
   getAllGames(apiUrl)
+}
+
+/// 12. Clear input field 
+const clearInput = () => {
+  searchGameInput.value = '';
+  search_term = '';
 }
 
 backButton.addEventListener('click',handleClick);
