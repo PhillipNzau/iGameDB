@@ -8,6 +8,7 @@ let gameId;
 
 
 let allGames;
+let searchedGame;
 let selectedGame;
 
 const mainView = document.getElementById('mainView');
@@ -177,6 +178,7 @@ const getSelectedGame = async (url) => {
     const response = await fetch(url)
     const data = await response.json();
     selectedGame = data;
+
     return showGameDetails(selectedGame)
   } catch (error) {
     console.error(error);
@@ -198,6 +200,7 @@ const searchForGame = () => {
 
 /// 9.Add to favourite
 const addToFavorite = () => {
+   
   // const added = favs.push(selectedGame)
   if(favs.includes(selectedGame)) {
     alert('Game already in your favorites.')
@@ -212,7 +215,6 @@ const addToFavorite = () => {
 
 const toggleActiveClass = (page) => {
   if(page === 'home') {
-    console.log('active home');
     homeButton.classList.add('active');
     sideHomeButton.classList.add('active');
     addToFavsButton.classList.remove('active');
@@ -220,7 +222,6 @@ const toggleActiveClass = (page) => {
     
   } 
   else if(page === 'fav') {
-    console.log('active fav');
 
     homeButton.classList.remove('active');
     addToFavsButton.classList.add('active');
@@ -242,7 +243,6 @@ const showFavoriteGames = () => {
     listTitle.innerText = 'No Game Added'
   } else {
     listTitle.innerText = 'Your Favorite Games'
-
   }
  
   // const cachedFavData = JSON.parse(localStorage.getItem('favgames') || '');
@@ -320,4 +320,24 @@ searchGameInput.addEventListener('input', (e) => {
   search_term = e.target.value.toLowerCase();
   searchForGame()
 });
-getAllGames(apiUrl)
+
+searchButton.addEventListener('click', () => {
+  if(search_term) {
+    getSearchedGames(`${apiUrl}&search=${search_term}`);
+    clearInput();
+  }
+});
+const getSearchedGames = async (url) => {
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    searchedGame = data.results;
+    showGameList(searchedGame);
+    return showGameList(searchedGame);
+  } catch (error) {
+    console.error(error);
+    throw new ErrorEvent('Failed to fetch data');
+  }
+}
+
+getAllGames(apiUrl);
