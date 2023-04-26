@@ -110,6 +110,9 @@ html {
   #topGame .game-container {
     height: 400px;
   }
+  .mainHeight {
+    height: calc(100vh - 580px);
+  }
 }
 .game-trailer-container {
   display: flex;

@@ -2563,6 +2563,10 @@ html {
   #topGame .game-container {
     height: 400px;
   }
+
+  .mainHeight {
+    height: calc(100vh - 580px);
+  }
 }
 
 .game-trailer-container {
@@ -2681,6 +2685,10 @@ html {
 
   .lg\:grid-cols-5 {
     grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .lg\:overflow-hidden {
+    overflow: hidden;
   }
 
   .lg\:px-16 {
