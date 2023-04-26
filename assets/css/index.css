@@ -673,16 +673,12 @@ video {
   margin-bottom: 1rem;
 }
 
-.mt-2 {
-  margin-top: 0.5rem;
-}
-
-.ml-10 {
-  margin-left: 2.5rem;
-}
-
 .ml-6 {
   margin-left: 1.5rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
 }
 
 .box-border {
@@ -804,8 +800,8 @@ video {
   width: 2.5rem;
 }
 
-.w-32 {
-  width: 8rem;
+.w-52 {
+  width: 13rem;
 }
 
 .w-6 {
@@ -814,14 +810,6 @@ video {
 
 .w-full {
   width: 100%;
-}
-
-.w-40 {
-  width: 10rem;
-}
-
-.w-52 {
-  width: 13rem;
 }
 
 .flex-shrink {
@@ -1814,11 +1802,6 @@ video {
   background-color: hsl(351 80% 49% / var(--tw-bg-opacity));
 }
 
-.bg-red-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(252 165 165 / var(--tw-bg-opacity));
-}
-
 .bg-opacity-25 {
   --tw-bg-opacity: 0.25;
 }
@@ -2041,11 +2024,6 @@ video {
   line-height: 1.75rem;
 }
 
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
 .font-bold {
   font-weight: 700;
 }
@@ -2135,11 +2113,6 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-gray-400 {
-  --tw-text-opacity: 1;
-  color: rgb(156 163 175 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -2586,6 +2559,12 @@ html {
   stroke: red;
 }
 
+@media (min-width: 1024px) {
+  #topGame .game-container {
+    height: 400px;
+  }
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
@@ -2665,6 +2644,10 @@ html {
 
   .lg\:hidden {
     display: none;
+  }
+
+  .lg\:min-h-\[400px\] {
+    min-height: 400px;
   }
 
   .lg\:grid-cols-3 {

@@ -105,3 +105,9 @@ html {
 .active svg {
   stroke: red;
 }
+
+@media (min-width: 1024px) {
+  #topGame .game-container {
+    height: 400px;
+  }
+}
