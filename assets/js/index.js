@@ -287,6 +287,7 @@ const generateSideNavContainer =(game, primaryContainer) => {
   
   const gameCont = document.createElement('div')
   gameCont.classList.add('game-trailer-container')
+  gameCont.id = game.id;
 
   const gameImg = document.createElement('img');
   gameImg.src = game.background_image;
@@ -310,7 +311,20 @@ const generateSideNavContainer =(game, primaryContainer) => {
   gameCont.appendChild(gameDetails);
   frag.appendChild(gameCont);
 
+  gameCont.addEventListener('click', handleGetTrailerClick)
+
   primaryContainer.appendChild(frag);
+}
+const handleGetTrailerClick = (e) => {
+  alert(`Game trailer feature coming soon..`)
+  // const newUrl = `https://api.rawg.io/api/games/${gameId}/movies?key=${rawgAPI}`;
+  // console.log('url', newUrl);
+  // getSearchedGames(newUrl, gameTrailer );
+
+}
+
+const gameTrailer = (gameT) => {
+  console.log('trailer', gameT);
 }
 
 backButton.addEventListener('click',handleClick);
@@ -324,17 +338,19 @@ searchGameInput.addEventListener('input', (e) => {
 
 searchButton.addEventListener('click', () => {
   if(search_term) {
-    getSearchedGames(`${apiUrl}&search=${search_term}`);
+    getSearchedGames(`${apiUrl}&search=${search_term}`, showGameList);
     clearInput();
   }
 });
-const getSearchedGames = async (url) => {
+
+const getSearchedGames = async (url, getGameFunction) => {
   try {
     const response = await fetch(url);
     const data = await response.json();
     searchedGame = data.results;
-    showGameList(searchedGame);
-    return showGameList(searchedGame);
+    console.log(searchedGame);
+    getGameFunction(searchedGame);
+    return
   } catch (error) {
     console.error(error);
     throw new ErrorEvent('Failed to fetch data');
