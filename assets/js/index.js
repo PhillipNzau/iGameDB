@@ -54,7 +54,7 @@ const getAllGames = async (url) => {
   if (cachedData.length > 1) {
     allGames = cachedData
     showGameList(allGames);
-    showSliderGames(allGames)
+    showSliderGames(allGames);
     return;
   }
   try {
@@ -63,7 +63,8 @@ const getAllGames = async (url) => {
     allGames = data.results;
     localStorage.setItem('games', JSON.stringify(allGames))
     showGameList(allGames);
-    return showGameList(allGames);
+    showSliderGames(allGames);
+    return;
   } catch (error) {
     console.error(error);
     throw new ErrorEvent('Failed to fetch data');
@@ -122,12 +123,12 @@ const showGameList = (games) => {
 
 /// 5. show slider games
 const showSliderGames = (games) =>{
-  topGames = games.filter(game => game.rating >= 4.5);
+  let topGames = games.filter(game => game.rating >= 4.5);
   for(let topGame of topGames) {
     const gameSlider = document.createElement('div');
     gameSlider.classList.add('swiper-slide');
     generateContainer(topGame, gameSlider, swiperWrapper);
-    generateSideNavContainer(topGame,gameTrailers )
+    generateSideNavContainer(topGame, gameTrailers )
   }
 
 }
